@@ -13,13 +13,13 @@ n - кол-во элементов первого множества. m - кол
 '''
 
 
-n = int(input('Укажите размер первого набора целых чисел: '))
-m = int(input('Укажите размер второго набора целых чисел: '))
+print('Укажите размеры двух наборов целых чисел:', end=' ')
+size_list = [int(a) for a in input().split()]
 
 print('\nВведите элементы первого набора чисел:')
-list_n = [int(input(f'{i + 1}-й: ')) for i in range(n)]
+list_n = [int(input(f'{i + 1}-й: ')) for i in range(size_list[0])]
 print('\nВведите элементы второго набора чисел:')
-list_m = [int(input(f'{i + 1}-й: ')) for i in range(m)]
+list_m = [int(input(f'{i + 1}-й: ')) for i in range(size_list[1])]
 
 set_n = set(list_n)
 set_m = set(list_m) # избавляемя от повторяющихся элементов
