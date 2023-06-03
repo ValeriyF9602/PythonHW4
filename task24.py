@@ -18,12 +18,8 @@
 number_of_bushes = int(input('Укажите количество кустов на грядке: '))
 list_bush_yield = [int(input(f'Урожайность {i + 1}-го куста: ')) for i in range(number_of_bushes)]
 
-temp = list_bush_yield[-2] + list_bush_yield[-1] + list_bush_yield[0] # Кусты посажены по окружности — список цикличен
-max = temp
+arr_count = list()
+for i in range(number_of_bushes):
+    arr_count.append(list_bush_yield[i - 2] + list_bush_yield[i - 1] + list_bush_yield[i])
 
-for i in range(0, number_of_bushes - 1):
-    temp = temp - list_bush_yield[i - 2] + list_bush_yield[i + 1]
-    if temp > max:
-        max = temp
-
-print(max)
+print(max(arr_count))
